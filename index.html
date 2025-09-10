@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Symbldle</title>
+    <link rel="icon" href="symbols/1.magnifyingglass.png" />
+    <!-- Minimal, pleasant defaults -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="top">
+        <h1 class="title">Symbldle</h1>
+        <div class="date-row">
+          <button id="prevDayBtn" title="Previous day" aria-label="Previous day">◀</button>
+          <div id="today" class="date"></div>
+          <button id="nextDayBtn" title="Next day" aria-label="Next day">▶</button>
+        </div>
+        <div class="controls">
+          <button id="helpBtn" title="How to play">?</button>
+        </div>
+      </header>
+
+      <section class="board-wrap">
+  <div id="board" class="board" aria-label="Guess board" tabindex="0"></div>
+      </section>
+
+  <section class="kb-wrap" aria-label="Keyboard">
+        <div id="keyboard" class="keyboard"></div>
+      </section>
+
+      
+    </main>
+
+    <div id="toastHost" class="toast-host" aria-live="polite"></div>
+
+    <div id="helpModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-dialog" role="document">
+        <header class="modal-header">
+          <strong>How To Play</strong>
+          <button class="close" data-close title="Close">×</button>
+        </header>
+        <div class="modal-body">
+          <p>Guess the symbol in 6 tries. Each guess is a sequence of tokens separated by dots, like <code>person.crop.circle</code>.</p>
+          <ul>
+            <li>Use letters/numbers; press dot/comma/space to commit a token.</li>
+            <li>Tab accepts the first suggestion. Enter submits the row.</li>
+            <li>Green = correct token and position; Yellow = present elsewhere; Gray = not present.</li>
+          </ul>
+        </div>
+        <footer class="modal-footer">
+          <button class="key wide" data-close>Got it</button>
+        </footer>
+      </div>
+    </div>
+
+    <div id="resultModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-backdrop" data-close="result"></div>
+      <div class="modal-dialog" role="document">
+        <header class="modal-header">
+          <strong>Game Over</strong>
+          <button class="close" data-close="result" title="Close">×</button>
+        </header>
+        <div class="modal-body">
+          <p id="resultSummary"></p>
+          <p>Answer: <code id="resultAnswer"></code></p>
+          <pre id="resultGrid" aria-label="Your result"></pre>
+        </div>
+        <footer class="modal-footer">
+          <button id="copyScoreBtn" class="key wide">Copy score</button>
+          <button id="playAgainBtn" class="key">New game</button>
+          <button class="key" data-close="result">Close</button>
+        </footer>
+      </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+  </body>
+  </html>
