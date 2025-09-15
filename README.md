@@ -2,7 +2,7 @@
 
 <img width="2688" height="1382" alt="image" src="https://github.com/user-attachments/assets/aee66859-67df-47e8-9923-0d24a2a3a64d" />
 
-**Symbldle** is a Wordle-like game where you try to figure out the days SF Symbol!
+**Symbldle** is a Wordle-like game where you try to figure out the day's SF Symbol!
 
 controls:
 - keyboard to write a character
