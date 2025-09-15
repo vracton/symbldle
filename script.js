@@ -145,14 +145,14 @@ function handleKey(key) {
     if (builder) {
       const nextTok = builder.toLowerCase();
       if (!isValidNextToken(nextTok)) {
-        toast(`Unknown token: ${nextTok}`, 'error');
+        toast(`Invalid Modifier: ${nextTok}`, 'error');
         return;
       }
       currentGuess.push(nextTok);
       builder = '';
     }
     if (currentGuess.length === need) submitGuess();
-    else toast(`Need ${need} tokens; you have ${currentGuess.length}.`, 'error');
+    else toast(`Need ${need} modifiers; you have ${currentGuess.length}.`, 'error');
     return;
   }
   if (key === 'Tab') {
@@ -178,7 +178,7 @@ function handleKey(key) {
     if (builder) {
       const nextTok = builder.toLowerCase();
       if (!isValidNextToken(nextTok)) {
-        toast(`Unknown token: ${nextTok}`, 'error');
+        toast(`Invalid Modifier: ${nextTok}`, 'error');
       } else {
         currentGuess.push(nextTok);
       }
